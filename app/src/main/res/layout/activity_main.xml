@@ -24,16 +24,24 @@
         </android.support.design.widget.AppBarLayout>
 
         <android.support.design.widget.FloatingActionButton
+            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/fab"
             android:src="@mipmap/ic_account_plus"
             android:layout_gravity="end|bottom"
             android:layout_marginBottom="@dimen/fab_margin"
-            android:layout_marginRight="@dimen/fab_margin"/>
+            android:layout_marginRight="@dimen/fab_margin"
+            app:backgroundTint="@color/colorPrimary"/>
+
+        <android.support.v7.widget.ContentFrameLayout
+            android:id="@+id/inbox_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </android.support.v7.widget.ContentFrameLayout>
 
     </android.support.design.widget.CoordinatorLayout>
-
 
     <android.support.design.widget.NavigationView
         android:layout_width="wrap_content"

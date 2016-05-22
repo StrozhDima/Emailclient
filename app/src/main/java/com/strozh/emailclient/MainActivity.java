@@ -1,8 +1,8 @@
 package com.strozh.emailclient;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.woods.emailclient.R;
+import com.strozh.emailclient.fragments.FragmentInbox;
 
 /**
  * Created by Woods on 21.05.2016.
@@ -23,14 +24,16 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
     private static final int LAYOUT = R.layout.activity_main;
+    //инициализируем фрагменты каждого списка
+    private FragmentInbox fInbox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(LAYOUT);
-
         initToolbar();
         initNavigationView();
+        fInbox = new FragmentInbox();
     }
 
     private void initToolbar() {
@@ -57,16 +60,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
                 drawerLayout.closeDrawers();
+
+                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+
                 switch (menuItem.getItemId()) {
                     case R.id.action_item_inbox:
-                        showInboxLayout();
+                        fragmentTransaction.replace(R.id.inbox_frame, fInbox);
+                        break;
                 }
+
+                fragmentTransaction.commit();
+
                 return true;
             }
         });
     }
 
-    private void showInboxLayout() {
-        //TODO: перейти на лэйаут Inbox
-    }
 }
