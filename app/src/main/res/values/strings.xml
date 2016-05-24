@@ -10,9 +10,7 @@
     <string name="menu_item_exit">Exit</string>
     <string name="view_navigation_open">Open</string>
     <string name="view_navigation_close">Close</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="submenu_tittle">Additionally</string>
 
 
 </resources>

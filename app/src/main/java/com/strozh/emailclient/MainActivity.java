@@ -1,5 +1,6 @@
 package com.strozh.emailclient;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentTransaction;
@@ -28,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
     private FragmentInbox fInbox = new FragmentInbox();
     private FragmentSent fSent = new FragmentSent();
     private FragmentSpam fSpam = new FragmentSpam();
+    private FragmentNewMail fNewMail = new FragmentNewMail();
+    private FragmentDrafts fDrafts = new FragmentDrafts();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout.setDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.navigation);
+        final NavigationView navigationView = (NavigationView) findViewById(R.id.navigation);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
@@ -74,7 +77,18 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.action_item_spam:
                         fragmentTransaction.replace(R.id.general_layout, fSpam);
                         break;
-
+                    case R.id.action_item_new_mail:
+                        fragmentTransaction.replace(R.id.general_layout, fNewMail);
+                        break;
+                    case R.id.action_item_drafts:
+                        fragmentTransaction.replace(R.id.general_layout, fDrafts);
+                        break;
+                    case R.id.action_item_exit:
+                        //Close program
+                        Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        finish();
+                        //break;
                 }
 
                 fragmentTransaction.commit();

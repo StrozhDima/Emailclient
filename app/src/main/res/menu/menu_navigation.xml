@@ -1,20 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu
-    xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/action_item_inbox"
-        android:title="@string/menu_item_inbox"
-        android:orderInCategory="1"
-        android:icon="@mipmap/ic_inbox"/>
-    <item
-        android:id="@+id/action_item_sent"
-        android:title="@string/menu_item_sent"
-        android:orderInCategory="2"
-        android:icon="@mipmap/ic_outbox"/>
-    <item
-        android:id="@+id/action_item_spam"
-        android:title="@string/menu_item_spam"
-        android:orderInCategory="3"
-        android:icon="@mipmap/ic_alert_octagon"/>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/action_item_inbox"
+            android:title="@string/menu_item_inbox"
+            android:orderInCategory="1"
+            android:icon="@mipmap/ic_inbox"/>
+        <item
+            android:id="@+id/action_item_sent"
+            android:title="@string/menu_item_sent"
+            android:orderInCategory="2"
+            android:icon="@mipmap/ic_outbox"/>
+        <item
+            android:id="@+id/action_item_spam"
+            android:title="@string/menu_item_spam"
+            android:orderInCategory="3"
+            android:icon="@mipmap/ic_alert_octagon"/>
+    </group>
+
+        <item
+            android:title="@string/submenu_tittle"
+            android:orderInCategory="4">
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/action_item_new_mail"
+                        android:title="@string/menu_item_new_mail"
+                        android:orderInCategory="1"
+                        android:icon="@mipmap/ic_pen"/>
+                    <item
+                        android:id="@+id/action_item_drafts"
+                        android:title="@string/menu_item_drafts"
+                        android:orderInCategory="2"
+                        android:icon="@mipmap/ic_appnet"/>
+                    <item
+                        android:id="@+id/action_item_exit"
+                        android:title="@string/menu_item_exit"
+                        android:orderInCategory="3"
+                        android:icon="@mipmap/ic_window_close"/>
+                </group>
+            </menu>
+        </item>
 </menu>
