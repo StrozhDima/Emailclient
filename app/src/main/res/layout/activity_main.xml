@@ -9,6 +9,7 @@
     android:fitsSystemWindows="true">
 
     <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/general_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <android.support.design.widget.AppBarLayout
@@ -33,13 +34,6 @@
             android:layout_marginBottom="@dimen/fab_margin"
             android:layout_marginRight="@dimen/fab_margin"
             app:backgroundTint="@color/colorPrimary"/>
-
-        <android.support.v7.widget.ContentFrameLayout
-            android:id="@+id/inbox_frame"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        </android.support.v7.widget.ContentFrameLayout>
 
     </android.support.design.widget.CoordinatorLayout>
 

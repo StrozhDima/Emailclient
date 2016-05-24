@@ -10,7 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.woods.emailclient.R;
-import com.strozh.emailclient.fragments.FragmentInbox;
+import com.strozh.emailclient.fragments.*;
 
 /**
  * Created by Woods on 21.05.2016.
@@ -25,7 +25,9 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private static final int LAYOUT = R.layout.activity_main;
     //инициализируем фрагменты каждого списка
-    private FragmentInbox fInbox;
+    private FragmentInbox fInbox = new FragmentInbox();
+    private FragmentSent fSent = new FragmentSent();
+    private FragmentSpam fSpam = new FragmentSpam();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(LAYOUT);
         initToolbar();
         initNavigationView();
-        fInbox = new FragmentInbox();
     }
 
     private void initToolbar() {
@@ -65,8 +66,15 @@ public class MainActivity extends AppCompatActivity {
 
                 switch (menuItem.getItemId()) {
                     case R.id.action_item_inbox:
-                        fragmentTransaction.replace(R.id.inbox_frame, fInbox);
+                        fragmentTransaction.replace(R.id.general_layout, fInbox);
                         break;
+                    case R.id.action_item_sent:
+                        fragmentTransaction.replace(R.id.general_layout, fSent);
+                        break;
+                    case R.id.action_item_spam:
+                        fragmentTransaction.replace(R.id.general_layout, fSpam);
+                        break;
+
                 }
 
                 fragmentTransaction.commit();

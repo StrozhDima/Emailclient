@@ -6,5 +6,15 @@
         android:title="@string/menu_item_inbox"
         android:orderInCategory="1"
         android:icon="@mipmap/ic_inbox"/>
+    <item
+        android:id="@+id/action_item_sent"
+        android:title="@string/menu_item_sent"
+        android:orderInCategory="2"
+        android:icon="@mipmap/ic_outbox"/>
+    <item
+        android:id="@+id/action_item_spam"
+        android:title="@string/menu_item_spam"
+        android:orderInCategory="3"
+        android:icon="@mipmap/ic_alert_octagon"/>
 
 </menu>
