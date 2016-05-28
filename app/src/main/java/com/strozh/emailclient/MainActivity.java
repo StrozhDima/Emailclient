@@ -9,6 +9,8 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.woods.emailclient.R;
 import com.strozh.emailclient.fragments.*;
@@ -21,6 +23,10 @@ public class MainActivity extends AppCompatActivity {
     public void setTheme(int resid) {
         super.setTheme(R.style.AppDefault);
     }
+
+    private static final String SETTINGS = "settings";
+    private static final String LOGIN = "login";
+    private static final String PASSWORD = "password";
 
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
@@ -41,16 +47,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initToolbar() {
+
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.app_name);
+        toolbar.inflateMenu(R.menu.menu);
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
+                switch (menuItem.getItemId()) {
+                    case R.id.menu_item_login:
+
+                        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                        startActivity(intent);
+
+                        return true;
+                }
                 return false;
             }
         });
-        toolbar.inflateMenu(R.menu.menu);
-
     }
 
     private void initNavigationView() {
@@ -88,14 +102,10 @@ public class MainActivity extends AppCompatActivity {
                         Intent intent = new Intent(MainActivity.this, MainActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         finish();
-                        //break;
                 }
-
                 fragmentTransaction.commit();
-
                 return true;
             }
         });
     }
-
 }

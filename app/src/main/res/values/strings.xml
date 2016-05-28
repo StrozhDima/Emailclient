@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Emailclient Beta</string>
-    <string name="search_title">Search</string>
+    <string name="settings_title">Settings</string>
     <string name="menu_item_inbox">Inbox</string>
     <string name="menu_item_sent">Sent</string>
     <string name="menu_item_spam">Spam</string>
@@ -11,6 +11,23 @@
     <string name="view_navigation_open">Open</string>
     <string name="view_navigation_close">Close</string>
     <string name="submenu_tittle">Additionally</string>
+    <string name="fragment_login">Autorization</string>
+    <string name="OK">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
 
 
 </resources>
