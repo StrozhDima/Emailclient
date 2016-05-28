@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,133 +8,132 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.woods.emailclient.SettingsActivity">
+    tools:context="com.woods.emailclient.LoginActivity">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/text_login_login"
-        android:textColor="@color/colorGray"
         android:id="@+id/text_login"
-        android:layout_alignParentTop="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="41dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/text_login_password"
-        android:textColor="@color/colorGray"
-        android:id="@+id/text_password"
-        android:layout_below="@+id/text_login"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="41dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/text_login_server"
-        android:textColor="@color/colorGray"
-        android:id="@+id/text_server"
-        android:layout_below="@+id/text_password"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="41dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/text_login_port"
-        android:textColor="@color/colorGray"
-        android:id="@+id/text_port"
-        android:layout_below="@+id/text_server"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="41dp" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:ems="13"
-        android:maxLength="20"
-        android:id="@+id/edit_text_log_in"
-        android:hint="example: 'user@mail.com'"
-        android:textColorHint="@color/colorOpasityGray"
-        android:textColor="@color/colorWhite"
-        android:layout_alignBaseline="@+id/text_login"
-        android:layout_toRightOf="@+id/text_login" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="11"
-        android:maxLength="20"
-        android:id="@+id/edit_text_password"
-        android:hint="maximum 20 words "
-        android:textColorHint="@color/colorOpasityGray"
-        android:textColor="@color/colorWhite"
-        android:layout_alignBaseline="@+id/text_password"
-        android:layout_toRightOf="@+id/text_password" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textUri"
-        android:ems="10"
-        android:maxLength="15"
-        android:id="@+id/edit_text_server"
-        android:hint="example: 'mail.com'"
-        android:textColorHint="@color/colorOpasityGray"
-        android:textColor="@color/colorWhite"
-        android:layout_alignBaseline="@+id/text_server"
-        android:layout_toRightOf="@+id/text_server" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textUri"
-        android:ems="6"
-        android:maxLength="5"
-        android:id="@+id/edit_text_port"
-        android:hint="example: '465'"
-        android:textColorHint="@color/colorOpasityGray"
-        android:textColor="@color/colorWhite"
-        android:layout_alignBaseline="@+id/text_port"
-        android:layout_toRightOf="@+id/text_port" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="@string/text_login_login"
-        android:textColor="@color/colorWhite"
-        android:id="@+id/button_log_in"
-        android:background="@color/colorPrimary"
-        android:layout_marginTop="41dp"
-        android:layout_below="@+id/text_port"
-        android:layout_alignRight="@+id/edit_text_password"
-        android:layout_alignEnd="@+id/edit_text_password"
-        android:layout_toRightOf="@+id/text_login"
-        android:layout_toEndOf="@+id/text_login" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/colorGray" />
 
-    <Button
+    <TextView
+        android:id="@+id/text_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/text_login_logout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/text_login"
+        android:layout_marginTop="41dp"
+        android:text="@string/text_login_password"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/colorGray" />
+
+    <TextView
+        android:id="@+id/text_server"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/text_password"
+        android:layout_marginTop="41dp"
+        android:text="@string/text_login_server"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/colorGray" />
+
+    <TextView
+        android:id="@+id/text_port"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/text_server"
+        android:layout_marginTop="41dp"
+        android:text="@string/text_login_port"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/colorGray" />
+
+    <EditText
+        android:id="@+id/edit_text_log_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/text_login"
+        android:layout_toRightOf="@+id/text_login"
+        android:ems="13"
+        android:hint="example: 'user@mail.com'"
+        android:inputType="textEmailAddress"
+        android:maxLength="20"
         android:textColor="@color/colorWhite"
-        android:id="@+id/button_log_out"
+        android:textColorHint="@color/colorOpasityGray" />
+
+    <EditText
+        android:id="@+id/edit_text_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/text_password"
+        android:layout_toRightOf="@+id/text_password"
+        android:ems="11"
+        android:hint="maximum 20 words "
+        android:inputType="textPassword"
+        android:maxLength="20"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="@color/colorOpasityGray" />
+
+    <EditText
+        android:id="@+id/edit_text_server"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/text_server"
+        android:layout_toRightOf="@+id/text_server"
+        android:ems="10"
+        android:hint="example: 'mail.com'"
+        android:inputType="textUri"
+        android:maxLength="15"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="@color/colorOpasityGray" />
+
+    <EditText
+        android:id="@+id/edit_text_port"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/text_port"
+        android:layout_toRightOf="@+id/text_port"
+        android:ems="6"
+        android:hint="example: '465'"
+        android:inputType="numberDecimal"
+        android:maxLength="5"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="@color/colorOpasityGray" />
+
+    <Button
+        android:id="@+id/button_log_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/edit_text_password"
+        android:layout_alignRight="@+id/edit_text_password"
+        android:layout_below="@+id/text_port"
+        android:layout_marginTop="41dp"
+        android:layout_toEndOf="@+id/text_login"
+        android:layout_toRightOf="@+id/text_login"
         android:background="@color/colorPrimary"
+        android:text="@string/text_login_login"
+        android:textColor="@color/colorWhite" />
+
+    <Button
+        android:id="@+id/button_log_out"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/button_log_in"
+        android:layout_alignLeft="@+id/button_log_in"
+        android:layout_alignRight="@+id/button_log_in"
+        android:layout_alignStart="@+id/button_log_in"
         android:layout_below="@+id/button_log_in"
         android:layout_marginTop="20dp"
-        android:layout_alignLeft="@+id/button_log_in"
-        android:layout_alignStart="@+id/button_log_in"
-        android:layout_alignRight="@+id/button_log_in"
-        android:layout_alignEnd="@+id/button_log_in" />
+        android:background="@color/colorPrimary"
+        android:text="@string/text_login_logout"
+        android:textColor="@color/colorWhite" />
 </RelativeLayout>

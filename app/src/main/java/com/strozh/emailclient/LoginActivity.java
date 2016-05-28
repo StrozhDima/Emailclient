@@ -1,9 +1,10 @@
 package com.strozh.emailclient;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,14 +18,11 @@ public class LoginActivity extends AppCompatActivity {
     EditText editTextServer;
     EditText editTextPort;
 
-    final String APP_PREFERENCES = "setting";
     final String LOGIN = "login";
     final String PASSWORD = "password";
     final String SERVER = "server";
     final String PORT = "port";
-
-    String USER = null;
-    String PASS = null;
+    final String LOGIN_FLAG = "loginFlag";
 
     Button buttonLogin;
     Button buttonLogout;
@@ -36,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        appSharedPreferences = getSharedPreferences(APP_PREFERENCES, MODE_PRIVATE);
+        appSharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         editor = appSharedPreferences.edit();
 
         editTextLogin = (EditText) findViewById(R.id.edit_text_log_in);
@@ -47,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
         buttonLogin = (Button) findViewById(R.id.button_log_in);
         buttonLogout = (Button) findViewById(R.id.button_log_out);
 
-        if (appSharedPreferences.contains(LOGIN) && appSharedPreferences.contains(PASSWORD)){
+        if (this.isUserLoggedIn()){
             editTextLogin.setText(appSharedPreferences.getString(LOGIN, ""));
             editTextPassword.setText(appSharedPreferences.getString(PASSWORD, ""));
             editTextServer.setText(appSharedPreferences.getString(SERVER, ""));
@@ -62,6 +60,7 @@ public class LoginActivity extends AppCompatActivity {
                 editor.putString(PASSWORD, editTextPassword.getText().toString().trim());
                 editor.putString(SERVER, editTextServer.getText().toString().trim());
                 editor.putString(PORT, editTextPort.getText().toString().trim());
+                editor.putBoolean(LOGIN_FLAG, true);
                 editor.apply();
 
                 Toast.makeText(LoginActivity.this, R.string.toast_save_settings, Toast.LENGTH_SHORT).show();
@@ -73,18 +72,20 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 editor.clear();
-                editor.commit();
+                editor.apply();
 
                 editTextLogin.setText("");
                 editTextPassword.setText("");
                 editTextServer.setText("");
                 editTextPort.setText("");
 
-                Toast.makeText(LoginActivity.this, "Delete login...", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, R.string.toast_delete_settings, Toast.LENGTH_SHORT).show();
             }
-
         });
+    }
 
-
+    // Check for login
+    public boolean isUserLoggedIn(){
+        return appSharedPreferences.getBoolean(LOGIN_FLAG, false);
     }
 }

@@ -3,5 +3,29 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="192dp"
-    android:background="@drawable/header_background">
+    android:background="@color/colorPrimaryDark">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/header_welcome"
+            android:text="@string/text_header_welcome"
+            android:textSize="24sp"
+            android:textColor="@color/colorWhite"
+            android:paddingLeft="16dp"
+            android:paddingTop="40dp"
+            android:gravity="left"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/header_user"
+            android:text="@string/text_header_user"
+            android:textSize="20sp"
+            android:textColor="@color/colorWhite"
+            android:textIsSelectable="true"
+            android:textStyle="italic"
+            android:paddingLeft="16dp"
+            android:paddingTop="16dp"
+            android:gravity="left"
+            />
 </LinearLayout>

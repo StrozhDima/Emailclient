@@ -11,7 +11,6 @@
     <string name="view_navigation_open">Open</string>
     <string name="view_navigation_close">Close</string>
     <string name="submenu_tittle">Additionally</string>
-    <string name="fragment_login">Autorization</string>
     <string name="OK">OK</string>
     <string name="cancel">Cancel</string>
     <string name="title_activity_login">Sign in</string>
@@ -35,6 +34,9 @@
     <string name="text_login_port">Port</string>
     <string name="toast_pls_login">Enter login, password, server and port</string>
     <string name="toast_save_settings">Settings was saved...</string>
+    <string name="toast_delete_settings">Settings was deleted...</string>
+    <string name="text_header_welcome">Your are sing in as:</string>
+    <string name="text_header_user">nobody</string>
 
 
 </resources>
