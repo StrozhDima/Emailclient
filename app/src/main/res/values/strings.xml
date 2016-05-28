@@ -28,6 +28,13 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="text_login_server">Server</string>
+    <string name="text_login_password">Password</string>
+    <string name="text_login_login">Login</string>
+    <string name="text_login_logout">Logout</string>
+    <string name="text_login_port">Port</string>
+    <string name="toast_pls_login">Enter login, password, server and port</string>
+    <string name="toast_save_settings">Settings was saved...</string>
 
 
 </resources>

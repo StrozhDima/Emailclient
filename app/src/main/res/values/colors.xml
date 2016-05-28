@@ -2,6 +2,7 @@
 <resources>
     <color name="colorPrimary">#2978a0</color>
     <color name="colorPrimaryDark">#216080</color>
-    <color name="mainBackgroung">#e8e8e8</color>
     <color name="colorWhite">#e8e8e8</color>
+    <color name="colorOpasityGray">#878b8b8b</color>
+    <color name="colorGray">#bababa</color>
 </resources>
