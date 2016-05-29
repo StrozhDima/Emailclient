@@ -4,7 +4,6 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,7 +19,7 @@ public class LoginActivity extends AppCompatActivity {
 
     final String LOGIN = "login";
     final String PASSWORD = "password";
-    final String SERVER = "server";
+    final String HOST = "host";
     final String PORT = "port";
     final String LOGIN_FLAG = "loginFlag";
 
@@ -48,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
         if (this.isUserLoggedIn()){
             editTextLogin.setText(appSharedPreferences.getString(LOGIN, ""));
             editTextPassword.setText(appSharedPreferences.getString(PASSWORD, ""));
-            editTextServer.setText(appSharedPreferences.getString(SERVER, ""));
+            editTextServer.setText(appSharedPreferences.getString(HOST, ""));
             editTextPort.setText(appSharedPreferences.getString(PORT, ""));
         } else Toast.makeText(LoginActivity.this, R.string.toast_pls_login, Toast.LENGTH_SHORT).show();
 
@@ -58,7 +57,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 editor.putString(LOGIN, editTextLogin.getText().toString().trim());
                 editor.putString(PASSWORD, editTextPassword.getText().toString().trim());
-                editor.putString(SERVER, editTextServer.getText().toString().trim());
+                editor.putString(HOST, editTextServer.getText().toString().trim());
                 editor.putString(PORT, editTextPort.getText().toString().trim());
                 editor.putBoolean(LOGIN_FLAG, true);
                 editor.apply();

@@ -1,6 +1,5 @@
 package com.strozh.emailclient;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -11,11 +10,9 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.woods.emailclient.R;
 import com.strozh.emailclient.fragments.*;
@@ -31,10 +28,9 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "EmailClient";
 
-    final String APP_PREFERENCES = "setting";
     final String LOGIN = "login";
     final String PASSWORD = "password";
-    final String SERVER = "server";
+    final String HOST = "host";
     final String PORT = "port";
     final String LOGIN_FLAG = "loginFlag";
 
@@ -50,13 +46,11 @@ public class MainActivity extends AppCompatActivity {
     private FragmentDrafts fDrafts = new FragmentDrafts();
 
     SharedPreferences appSharedPreferences;
-    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         appSharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-        editor = appSharedPreferences.edit();
         setContentView(LAYOUT);
         initToolbar();
         initNavigationView();
@@ -126,9 +120,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
         View header = navigationView.getHeaderView(0);
-        textHeaderUser = (TextView)header.findViewById(R.id.header_user);
-            if (appSharedPreferences.contains(LOGIN) && appSharedPreferences.getBoolean(LOGIN_FLAG, false))
-                textHeaderUser.setText(appSharedPreferences.getString(LOGIN, ""));
+        textHeaderUser = (TextView) header.findViewById(R.id.header_user);
+        if (appSharedPreferences.contains(LOGIN) && appSharedPreferences.getBoolean(LOGIN_FLAG, false))
+            textHeaderUser.setText(appSharedPreferences.getString(LOGIN, ""));
 
     }
 }
