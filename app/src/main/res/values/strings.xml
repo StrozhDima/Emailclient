@@ -37,6 +37,16 @@
     <string name="toast_delete_settings">Settings was deleted...</string>
     <string name="text_header_welcome">Your are sing in as:</string>
     <string name="text_header_user">nobody</string>
+    <string name="subject">Subject:</string>
+    <string name="time">00:00</string>
+    <string name="folder_inbox">Inbox:</string>
+    <string name="email">user@mail.com</string>
+    <string name="error_email">This email address is invalid</string>
+    <string name="error_password">This password is invalid</string>
+    <string name="default_from">From:</string>
+    <string name="default_subject">Subject:</string>
+    <string name="default_body">Message:</string>
+    <string name="reply">Reply</string>
 
 
 </resources>
